@@ -1,3 +1,4 @@
+// Merge sort algorithm using recursion
 function mergeSort(arr){
     if (arr.length < 2) return arr
     const midPoint = Math.floor(arr.length / 2)
@@ -6,6 +7,8 @@ function mergeSort(arr){
     return merge(mergeSort(leftArray), mergeSort(rightArray))
 }
 
+
+// Function to merge the both sides of the array
 function merge(left, right){
     const sortedArray = []
     while(left.length && right.length){
