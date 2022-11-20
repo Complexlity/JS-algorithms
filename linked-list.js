@@ -7,22 +7,23 @@ class Node{
 
 
 class LinkedList {
+    #count;
     constructor(head=null){
         this.head = head
-        this.count = 0
+        this.#count = 0
     }
 
     append(value){
         const addedNode = new Node(value)
         if(this.head == null){
             this.head = addedNode
-            this.count++
+            this.#count++
         }
         else {
             const nextNode = this.head
-            const nullNode = this.findNull(nextNode)
+            const nullNode = this.#findNull(nextNode)
             nullNode.next = addedNode
-            this.count++
+            this.#count++
         }
     }
 
@@ -30,14 +31,14 @@ class LinkedList {
         const addedNode = new Node(value)
         addedNode.next = this.head
         this.head = addedNode
-        this.count++
+        this.#count++
     }
 
-    size(){return this.count}
+    size(){return this.#count}
 
     headNode(){ return this.head}
     
-    tailNode(){ return this.findNull(this.head)}
+    tailNode(){ return this.#findNull(this.head)}
 
     atIndex(index, value = this.head){
         if (value == null || typeof index !== 'number') return null
@@ -50,19 +51,19 @@ class LinkedList {
 
     pop(){
         if(!this.head) return
-        const penultimateNode = this.findPenultimate(this.head)
+        const penultimateNode = this.#findPenultimate(this.head)
         const lastNode = penultimateNode.next
         penultimateNode.next = null
-        this.count--
-        return lastNode
+        this.#count--
+        return lastNode.data
     }
 
     shift(){
         if(this.head == null) return
-        const shifted = this.head.next
-        this.head = shifted
-        this.count--
-        return shifted
+        const shifted = this.head
+        this.head = shifted.next
+        this.#count--
+        return shifted.data
     }
 
     contains(value, find=false, node=this.head, index=0){
@@ -107,33 +108,32 @@ class LinkedList {
             insertedNode.next = currentNode
             previousNode.next = insertedNode
         }
-        this.count++
-        return new Node(value)
+        this.#count++
     }
 
     removeAt(index){
-        if (index == 0) this.shift()
-        else if (index >= this.count || index < 0) return
+        if (index == 0) return this.shift()
+        else if (index >= this.#count || index < 0) return
         else {
             const previousNode = this.atIndex(index-1)
             const currentNode = previousNode.next
             previousNode.next = currentNode.next
-            return currentNode
+            return currentNode.data
         }
         
     }
 
 // Utitlity Functions
-    findNull(value){
+    #findNull(value){
         if(value.next == null) return value
         else {
-            return this.findNull(value.next)
+            return this.#findNull(value.next)
         }
     }
 
-    findPenultimate(value){
+    #findPenultimate(value){
         if (value.next.next == null) return value
-        else return this.findPenultimate(value.next)
+        else return this.#findPenultimate(value.next)
     }
 }
 
@@ -141,17 +141,16 @@ const myList = new LinkedList()
 const firstValue = 'Hello'
 const secondValue = 'World'
 
-myList.append("Hello")
-myList.append("Second")
-// myList.append('Third')
-myList.append('Fourth')
+myList.append(secondValue)
+console.log(myList.toString())
+myList.prepend(firstValue)
+console.log(myList.toString())
+console.log(myList.atIndex(31))
+// console.log(myList.pop())
+console.log(myList.toString())
+console.log(myList.find('Hello'))
+console.log(myList.insertAt(1, 'How are you'))
+console.log(myList.toString())
+console.log(myList.removeAt(0))
+console.log(myList.toString())
 
-console.log(myList.toString())
-console.log(myList.insertAt(2, 'Third'))
-console.log(myList.toString())
-const another = new LinkedList()
-another.pop()
-another.append('Hello')
-console.log(another.toString())
-another.removeAt(0)
-console.log(another.toString())

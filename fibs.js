@@ -19,4 +19,4 @@ function fibsRec(value, arr=[0,1]){
 }
 
 console.log(fibs(8)) // [0, 1, 1, 2, 3, 5, 8, 13]
-console.log(fibsRec(9)) //[0, 1, 1, 2, 3, 5, 8, 13, 21]
+console.log(fibsRec(10)) //[0, 1, 1, 2, 3, 5, 8, 13, 21]
