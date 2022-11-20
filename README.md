@@ -39,7 +39,7 @@ The [LinkedList Object](https://github.com/Complexlity/JS-algorithms/blob/main/l
 - ### atIndex(index)
 ```myLinkedList.atIndex(1)``` returns the item at index of 1 _// World_ and returns `null` for invalid indexes
 - ### contains(value)
-```myLinkedList.contains('Coding')`` returns `true` if  'Coding' is present in the list and `false` otherwise _// false_
+```myLinkedList.contains('Coding')``` returns `true` if  'Coding' is present in the list and `false` otherwise _// false_
 - ### find(value)
 ```myLinkedList.find('World')``` returns the index of `World` in the list otherwise `null` _// 1_
 - ### toString
