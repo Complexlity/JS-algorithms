@@ -25,12 +25,12 @@ Above is a basic representation of a linked list
 ### Usage: Create an new linked list object 
 ```const myLinkedList = new LinkedList()``` 
 
-The [LinkedList Object](https://github.com/Complexlity/JS-algorithms/blob/main/linked-list.js) contains the following funtions
-- ### Append 
+The [LinkedList Object](https://github.com/Complexlity/JS-algorithms/blob/main/linked-list.js) contains the following methods
+- ### append 
 ```myLinkedList.append('World')``` inserts a new Node with data `World` to the end of the List and returns `undefined`
-- ### Prepend 
+- ### prepend 
 ```myLinkedList.prepend('Hello')``` inserts a new Node with data `Hello` to the beginning of the list and returns `undefined`
-- ### Size
+- ### size
 ```myLinkedList.size()```returns the number of items in the list _//  2_
 - ### headNode
 ```myLinkedList.headNode()``` returns the first item on the list (The Head) _// Hello_
