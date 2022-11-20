@@ -137,20 +137,4 @@ class LinkedList {
     }
 }
 
-const myList = new LinkedList()
-const firstValue = 'Hello'
-const secondValue = 'World'
-
-myList.append(secondValue)
-console.log(myList.toString())
-myList.prepend(firstValue)
-console.log(myList.toString())
-console.log(myList.atIndex(31))
-// console.log(myList.pop())
-console.log(myList.toString())
-console.log(myList.find('Hello'))
-console.log(myList.insertAt(1, 'How are you'))
-console.log(myList.toString())
-console.log(myList.removeAt(0))
-console.log(myList.toString())
 
