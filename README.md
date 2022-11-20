@@ -1,4 +1,4 @@
-# Implement Common Algorithms Using JavaScript
+# Create Common Algorithms Using JavaScript
 # 1. Fibonnaci
 In Maths, [fibonnaci](https://en.wikipedia.org/wiki/Fibonacci_number) is the sequence of numbers where the first two numbers are 0 and 1, with each subsequent number being defined as the sum of the previous two numbers in the sequence.
 For example, _0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233..._
