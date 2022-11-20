@@ -137,4 +137,10 @@ class LinkedList {
     }
 }
 
-
+const myList = new LinkedList()
+myList.append('World')
+myList.prepend('Hello')
+console.log(myList.toString())
+myList.insertAt(1, 'to the')
+console.log(myList.toString())
+myList.pop()
