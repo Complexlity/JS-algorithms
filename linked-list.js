@@ -89,8 +89,18 @@ class LinkedList {
     // }
 
     find(value){
-        return this.contains(value, true)
+        let node = this.head
+        let index = 0
+        while (node){
+            if(value === node.data){
+                return index
+            }
+            node = node.next
+            index++
+        }
+        return null
     }
+    
 
     toString(string='Head --> ', node=this.head){
         if(node == null) {
@@ -154,3 +164,4 @@ console.log(myList.toString())
 myList.insertAt(1, 'to the')
 console.log(myList.toString())
 console.log(myList.contains('to the'))
+console.log(myList.find('dlfj'))
