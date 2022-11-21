@@ -15,16 +15,17 @@ class LinkedList {
 
     append(value){
         const addedNode = new Node(value)
-        if(this.head == null){
-            this.head = addedNode
-            this.#count++
+        if(!this.head) this.head = addedNode
+        else{
+            let currentNode = this.head
+            let parentNode
+        while(currentNode){
+            parentNode = currentNode
+            currentNode = parentNode.next
         }
-        else {
-            const nextNode = this.head
-            const nullNode = this.#findNull(nextNode)
-            nullNode.next = addedNode
-            this.#count++
-        }
+        parentNode.next = addedNode
+    }
+
     }
 
     prepend(value){
@@ -66,7 +67,6 @@ class LinkedList {
         return shifted.data
     }
 
-    // contains(value, find=false, node=this.head, index=0){
         contains(value){
         let node = this.head
         while (node){
@@ -77,16 +77,7 @@ class LinkedList {
         }
         return false
     }
-    //     if (node.data == value) {
-    //         if(find) return index
-    //         return true
-    //     }
-    //     else if (node.next == null) {
-    //         if(find) return null
-    //         return false
-    //     }
-    //     else return this.contains(value,find, node.next, index+1)
-    // }
+    
 
     find(value){
         let node = this.head
@@ -158,6 +149,7 @@ class LinkedList {
 
 const myList = new LinkedList()
 myList.append('World')
+
 myList.prepend('Hello')
 console.log(myList.toString())
 myList.insertAt(1, 'to the')
