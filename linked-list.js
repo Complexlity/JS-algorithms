@@ -66,17 +66,27 @@ class LinkedList {
         return shifted.data
     }
 
-    contains(value, find=false, node=this.head, index=0){
-        if (node.data == value) {
-            if(find) return index
-            return true
+    // contains(value, find=false, node=this.head, index=0){
+        contains(value){
+        let node = this.head
+        while (node){
+            if(value === node.data){
+                return true
+            }
+            node = node.next
         }
-        else if (node.next == null) {
-            if(find) return null
-            return false
-        }
-        else return this.contains(value,find, node.next, index+1)
+        return false
     }
+    //     if (node.data == value) {
+    //         if(find) return index
+    //         return true
+    //     }
+    //     else if (node.next == null) {
+    //         if(find) return null
+    //         return false
+    //     }
+    //     else return this.contains(value,find, node.next, index+1)
+    // }
 
     find(value){
         return this.contains(value, true)
@@ -143,4 +153,4 @@ myList.prepend('Hello')
 console.log(myList.toString())
 myList.insertAt(1, 'to the')
 console.log(myList.toString())
-myList.pop()
+console.log(myList.contains('to the'))
