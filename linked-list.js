@@ -102,15 +102,14 @@ class LinkedList {
     }
     
 
-    toString(string='Head --> ', node=this.head){
-        if(node == null) {
-            string+= 'null'
-            return string
-        }
-        else{
+    toString(string='Head --> '){
+        let node=this.head
+        while(node){
             string += `(${node.data}) --> `
-            return this.toString(string, node.next)
+            node = node.next
         }
+        string += 'null'
+        return string
     }
     
     insertAt(index, value){
