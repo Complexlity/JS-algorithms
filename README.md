@@ -1,4 +1,4 @@
-# Create Common Algorithms Using JavaScript
+# Common Algorithms/Data Structures Using JavaScript
 # 1. Fibonnaci
 In Maths, [fibonnaci](https://en.wikipedia.org/wiki/Fibonacci_number) is the sequence of numbers where the first two numbers are 0 and 1, with each subsequent number being defined as the sum of the previous two numbers in the sequence.
 For example, _0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233..._
@@ -18,7 +18,7 @@ Optionally, it takes a `reverse` parameter. Default is `false`
 
 
 # 3. Linked List
-A linked list is a linear collection of data elements called nodes that “point” to the next node by means of a pointer.
+A [linked list](https://en.wikipedia.org/wiki/Linked_list) is a linear collection of data elements called nodes that “point” to the next node by means of a pointer.
 
 ``` [ NODE(head) ] -> [ NODE ] -> [NODE] -> [ NODE(tail) ] -> null```
 
